@@ -1,0 +1,771 @@
+:root {
+  --bg: #050608;
+  --bg-alt: #0b0d11;
+  --card: #10131a;
+  --accent: #c79c5a;
+  --accent-soft: rgba(199, 156, 90, 0.16);
+  --text: #f6f6f7;
+  --muted: #a1a5b2;
+  --border: #1b1f29;
+  --danger: #f87272;
+  --radius-xl: 28px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --shadow-soft: 0 24px 80px rgba(0, 0, 0, 0.55);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "SF Pro Text", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #151927 0, #050608 55%, #020308 100%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.tfy-root {
+  min-height: 100vh;
+  color: var(--text);
+}
+
+/* Révélations au scroll */
+
+.tfy-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  filter: blur(4px);
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out,
+    filter 0.7s ease-out;
+}
+
+.tfy-reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Navigation */
+
+.tfy-nav-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(
+    to bottom,
+    rgba(3, 5, 10, 0.94),
+    rgba(3, 5, 10, 0.78),
+    transparent
+  );
+}
+
+.tfy-nav {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.tfy-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.tfy-logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.tfy-logo-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 20% 0%, #f8e4c4 0, #c79c5a 40%, #6b4a1c);
+  box-shadow: 0 0 0 1px rgba(245, 230, 210, 0.6),
+    0 18px 45px rgba(0, 0, 0, 0.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #120c05;
+  animation: tfy-logo-pulse 3.8s ease-in-out infinite;
+}
+
+.tfy-logo-text {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  color: #e6e1d9;
+}
+
+.tfy-logo-text span {
+  color: var(--accent);
+}
+
+.tfy-nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.tfy-nav-links li {
+  cursor: pointer;
+  position: relative;
+  padding: 4px 0;
+}
+
+.tfy-nav-links li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--accent),
+    transparent
+  );
+  transform-origin: center;
+  transform: scaleX(0);
+  opacity: 0;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.tfy-nav-links li:hover {
+  color: #f0f0f5;
+}
+
+.tfy-nav-links li:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.tfy-nav-links li.tfy-nav-link--active {
+  color: #f7e6c5;
+}
+
+.tfy-nav-links li.tfy-nav-link--active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* Hero */
+
+.tfy-hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  align-items: center;
+  padding: 110px 20px 80px;
+  overflow: hidden;
+}
+
+.tfy-hero-video-container {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.tfy-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.04);
+  filter: saturate(0.9) contrast(1.02) brightness(0.8);
+  animation: tfy-hero-zoom 22s ease-in-out infinite alternate;
+}
+
+.tfy-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at top left,
+      rgba(0, 0, 0, 0.85) 0,
+      rgba(0, 0, 0, 0.92) 40%,
+      rgba(0, 0, 0, 0.96) 70%
+    ),
+    linear-gradient(to top, #050608 0, transparent 40%);
+  mix-blend-mode: multiply;
+}
+
+.tfy-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  animation: tfy-hero-in 0.8s ease-out both;
+}
+
+.tfy-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(199, 156, 90, 0.3);
+  background: radial-gradient(
+      circle at top left,
+      rgba(199, 156, 90, 0.16),
+      transparent 55%
+    ),
+    rgba(7, 9, 13, 0.86);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.7);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #f5eee1;
+  width: fit-content;
+}
+
+.tfy-hero h1 {
+  font-size: clamp(40px, 5vw, 54px);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  max-width: 550px;
+  text-wrap: balance;
+}
+
+.tfy-hero h1 span {
+  background: linear-gradient(120deg, #f7e6c5, #d0a768, #f7e6c5);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.tfy-hero-subtitle {
+  max-width: 480px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tfy-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.tfy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.18s ease;
+}
+
+.tfy-btn-primary {
+  background: radial-gradient(circle at 0 0, #f8e4c4, #c79c5a 45%, #6b4a1c);
+  color: #120c05;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+}
+
+.tfy-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.8);
+}
+
+.tfy-btn-secondary {
+  background: rgba(7, 9, 14, 0.9);
+  border-color: rgba(199, 156, 90, 0.35);
+  color: #f3eee5;
+}
+
+.tfy-btn-secondary:hover {
+  background: rgba(12, 16, 23, 0.95);
+  border-color: rgba(199, 156, 90, 0.6);
+}
+
+/* Sections génériques */
+
+.tfy-section {
+  padding: 80px 20px;
+}
+
+.tfy-section--first {
+  padding-top: 40px;
+}
+
+.tfy-section-alt {
+  background: radial-gradient(circle at top, #10131b 0, #050609 55%);
+}
+
+.tfy-section-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.tfy-section h2 {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.tfy-section-intro {
+  color: var(--muted);
+  max-width: 520px;
+  font-size: 14px;
+}
+
+.tfy-section-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.tfy-section-note {
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--muted);
+  opacity: 0.85;
+}
+
+/* About */
+
+.tfy-about-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: radial-gradient(circle at top left, #131726, #050608 70%);
+  box-shadow: var(--shadow-soft);
+  padding: 22px 24px;
+  font-size: 14px;
+}
+
+.tfy-about-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.tfy-about-highlight {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(199, 156, 90, 0.4);
+  font-style: italic;
+  color: #f0e5d2;
+}
+
+/* Massages */
+
+.tfy-massages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.tfy-massage-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: linear-gradient(
+    140deg,
+    rgba(10, 13, 21, 0.98),
+    rgba(5, 7, 12, 0.98)
+  );
+  padding: 18px 18px 16px;
+  font-size: 13px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s ease-out,
+    border-color 0.2s ease-out;
+}
+
+.tfy-massage-card h3 {
+  font-size: 15px;
+  margin: 0 0 8px;
+  color: #f4e7d4;
+}
+
+.tfy-massage-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tfy-massage-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(199, 156, 90, 0.6);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.75);
+}
+
+/* Réservation */
+
+.tfy-section-reservation {
+  align-items: stretch;
+}
+
+.tfy-reservation-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: radial-gradient(circle at top, #181c2b, #050609 65%);
+  padding: 22px 24px;
+  font-size: 13px;
+  box-shadow: var(--shadow-soft);
+}
+
+.tfy-reservation-note {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.tfy-list {
+  padding-left: 18px;
+  margin: 14px 0 20px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Galerie */
+
+.tfy-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+
+.tfy-gallery-item {
+  margin: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.7);
+}
+
+.tfy-gallery-item img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.tfy-gallery-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+/* Localisation */
+
+.tfy-map-wrapper {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  background: #050609;
+}
+
+.tfy-map-wrapper iframe {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  display: block;
+}
+
+/* Avis */
+
+.tfy-review-highlight {
+  margin-top: 24px;
+  margin-bottom: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(199, 156, 90, 0.4);
+  background: radial-gradient(circle at top left, #181b28, #070912 70%);
+  padding: 18px 20px 16px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+}
+
+.tfy-review-highlight-text {
+  margin: 0 0 8px;
+  color: #f5ecdd;
+  font-size: 14px;
+}
+
+.tfy-review-highlight-name {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.tfy-review-dots {
+  margin-top: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.tfy-review-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255, 255, 255, 0.22);
+  padding: 0;
+  cursor: pointer;
+}
+
+.tfy-review-dot--active {
+  width: 16px;
+  background: var(--accent);
+}
+
+.tfy-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 26px;
+}
+
+.tfy-review-card {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, #0e111a, #070912);
+  padding: 16px 18px;
+  font-size: 13px;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s ease-out,
+    border-color 0.2s ease-out;
+}
+
+.tfy-review-text {
+  margin: 0 0 10px;
+  color: #f0e7d9;
+}
+
+.tfy-review-name {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tfy-review-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(199, 156, 90, 0.6);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.75);
+}
+
+/* Animations clés */
+
+@keyframes tfy-logo-pulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 0 1px rgba(245, 230, 210, 0.6),
+      0 18px 45px rgba(0, 0, 0, 0.7);
+  }
+  50% {
+    transform: translateY(-1px) scale(1.04);
+    box-shadow: 0 0 0 1px rgba(245, 230, 210, 0.9),
+      0 22px 55px rgba(0, 0, 0, 0.85);
+  }
+}
+
+@keyframes tfy-hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tfy-hero-zoom {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1.09);
+  }
+}
+
+/* Footer */
+
+.tfy-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: radial-gradient(circle at top, #151827, #050609 65%);
+  margin-top: 40px;
+}
+
+.tfy-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 30px 20px 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  font-size: 13px;
+}
+
+.tfy-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tfy-footer-logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.tfy-footer-cols {
+  display: flex;
+  gap: 40px;
+}
+
+.tfy-footer h3 {
+  margin: 0 0 6px;
+}
+
+.tfy-footer h4 {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+
+.tfy-footer p {
+  margin: 0 0 4px;
+  color: var(--muted);
+}
+
+.tfy-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 20px 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.tfy-floating-cta {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 30;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 0 0, #f8e4c4, #c79c5a 45%, #6b4a1c);
+  color: #120c05;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.tfy-floating-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+}
+
+/* Responsive */
+
+@media (max-width: 960px) {
+  .tfy-nav {
+    padding-inline: 16px;
+  }
+
+  .tfy-nav-links {
+    display: none;
+  }
+
+  .tfy-section-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tfy-massages-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tfy-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tfy-reviews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tfy-footer-inner {
+    flex-direction: column;
+  }
+
+  .tfy-footer-cols {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .tfy-hero {
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+
+  .tfy-section {
+    padding: 60px 18px;
+  }
+
+  .tfy-massages-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tfy-gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tfy-reviews-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tfy-footer-bottom {
+    flex-direction: column;
+  }
+}
+
+
