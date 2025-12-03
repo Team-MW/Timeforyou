@@ -32,6 +32,12 @@ body {
 .tfy-root {
   min-height: 100vh;
   color: var(--text);
+  background: radial-gradient(
+    circle at top,
+    #fff4f7 0,
+    #fff7f5 40%,
+    #fbe8f0 100%
+  );
 }
 
 /* Révélations au scroll */
@@ -781,6 +787,8 @@ main {
 /* Footer */
 
 .tfy-footer {
+  position: relative;
+  z-index: 5;
   border-top: 1px solid rgba(240, 215, 222, 0.9);
   background: radial-gradient(circle at top, #ffeef4, #ffe1ec 65%);
   margin-top: 40px;
@@ -892,11 +900,21 @@ main {
   color: var(--muted);
 }
 
+.tfy-footer-bottom span:last-child a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.tfy-footer-bottom span:last-child a:hover {
+  text-decoration: underline;
+}
+
 .tfy-floating-cta {
   position: fixed;
   right: 24px;
   bottom: 24px;
-  z-index: 30;
+  z-index: 3;
   padding: 4px 6px;
   border-radius: 999px;
   background: transparent;
@@ -906,6 +924,7 @@ main {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+  margin: 0 0 24px auto;
   transition:
     transform 0.18s ease,
     box-shadow 0.18s ease;

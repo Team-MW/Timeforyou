@@ -123,7 +123,17 @@ export const Footer: React.FC = () => {
       </div>
       <div className="tfy-footer-bottom">
         <span>© {currentYear} Time for You. Tous droits réservés.</span>
-        <span>Site vitrine réalisé en React.</span>
+        <span>
+          Site vitrine réalisée par{" "}
+          <a
+            href="https://microdidact.com/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Microdidact
+          </a>
+          .
+        </span>
       </div>
     </footer>
   );
