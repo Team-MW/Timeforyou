@@ -14,7 +14,16 @@ import planityLogo from "./images/planity-logo.png";
 
 export const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("hero");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   useScrollReveal();
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setIsLoading(false);
+    }, 900);
+
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const sections = document.querySelectorAll<HTMLElement>("section[id]");
@@ -47,6 +56,17 @@ export const App: React.FC = () => {
 
   return (
     <div className="tfy-root">
+      {isLoading && (
+        <div className="tfy-loader-screen">
+          <div className="tfy-loader-card">
+            <div className="tfy-loader-logo">Time for You</div>
+            <div className="tfy-loader-sub">
+              Massages bien-être · Soin du corps
+            </div>
+            <div className="tfy-loader-spinner" />
+          </div>
+        </div>
+      )}
       <Navigation activeSection={activeSection} />
       <main>
         <Hero />

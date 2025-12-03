@@ -94,6 +94,48 @@ body {
   );
 }
 
+.tfy-loader-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #ffeef4, #ffffff 65%);
+}
+
+.tfy-loader-card {
+  padding: 18px 26px 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(240, 215, 222, 0.9);
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(200, 139, 155, 0.4);
+  text-align: center;
+}
+
+.tfy-loader-logo {
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.tfy-loader-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.tfy-loader-spinner {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 2px solid rgba(200, 139, 155, 0.25);
+  border-top-color: rgba(200, 139, 155, 0.9);
+  margin: 0 auto;
+  animation: tfy-spin 0.9s linear infinite;
+}
+
 /* Révélations au scroll */
 
 .tfy-reveal {
@@ -1149,6 +1191,15 @@ main {
   }
   to {
     transform: scale(1.09);
+  }
+}
+
+@keyframes tfy-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 
