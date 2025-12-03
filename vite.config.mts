@@ -6,8 +6,8 @@ export default defineConfig({
   server: {
     port: 5173,
   },
-  // Sert les images statiques directement depuis le dossier 4x voisin
-  publicDir: "../4x",
+  // Les assets publics (favicon, etc.) viennent du dossier par défaut "public"
+  // Les images de contenu sont désormais dans "src/images" et importées dans le code.
 });
 
 

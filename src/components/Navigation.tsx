@@ -1,4 +1,5 @@
 import React from "react";
+import logoFull from "../images/Logo 1@4x.png";
 
 type NavigationProps = {
   activeSection?: string;
@@ -17,7 +18,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
       <nav className="tfy-nav">
         <div className="tfy-logo" onClick={() => scrollTo("hero")}>
           <img
-            src="/Logo 1@4x.png"
+            src={logoFull}
             alt="Time for You"
             className="tfy-logo-img"
           />

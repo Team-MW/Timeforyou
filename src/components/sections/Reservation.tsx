@@ -1,4 +1,5 @@
 import React from "react";
+import planityLogo from "../../images/planity-logo.png";
 
 // Remplace ce lien par la vraie page Planity quand elle sera créée
 const PLANITY_URL = "https://www.planity.com/";
@@ -27,7 +28,7 @@ export const Reservation: React.FC = () => {
             aria-label="Réserver via Planity"
           >
             <span className="tfy-planity-logo">
-              <img src="/planity-logo.png" alt="Planity" />
+              <img src={planityLogo} alt="Planity" />
             </span>
           </a>
         </div>

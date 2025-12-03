@@ -305,14 +305,17 @@ main {
 }
 
 .tfy-planity-logo {
-  width: 170px;
-  height: 40px;
+  width: 190px;
+  height: 44px;
   border-radius: 999px;
   background: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(213, 154, 172, 0.5);
+  position: relative;
 }
 
 .tfy-planity-logo img {
@@ -320,6 +323,22 @@ main {
   height: 100%;
   object-fit: contain;
   display: block;
+}
+
+.tfy-planity-logo::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  top: 0;
+  height: 55%;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  pointer-events: none;
 }
 
 .tfy-btn-secondary {
@@ -349,7 +368,7 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/logo petit noir@4x.png");
+  background-image: url("./images/logo petit noir@4x.png");
   background-repeat: repeat;
   background-position: center;
   background-size: 260px auto;
@@ -366,7 +385,75 @@ main {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/logo petit noir@4x.png");
+  background-image: url("./images/logo petit noir@4x.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 260px auto;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+#localisation {
+  position: relative;
+  overflow: hidden;
+}
+
+#localisation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./images/logo petit noir@4x.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 260px auto;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+#avis {
+  position: relative;
+  overflow: hidden;
+}
+
+#avis::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./images/logo petit @4x.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 220px auto;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+#photos {
+  position: relative;
+  overflow: hidden;
+}
+
+#photos::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./images/logo petit noir@4x.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 260px auto;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+#massages {
+  position: relative;
+  overflow: hidden;
+}
+
+#massages::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./images/logo petit noir@4x.png");
   background-repeat: repeat;
   background-position: center;
   background-size: 260px auto;
@@ -811,8 +898,8 @@ main {
 }
 
 .tfy-planity-logo--floating {
-  width: 150px;
-  height: 34px;
+  width: 180px;
+  height: 42px;
 }
 
 /* Responsive */
