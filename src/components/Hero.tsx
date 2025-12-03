@@ -23,18 +23,18 @@ export const Hero: React.FC = () => {
       <div className="tfy-hero-content">
         <p className="tfy-hero-eyebrow">Massages bien-être · Soin du corps</p>
         <h1>
-          Offrez-vous <span>un temps pour vous</span>
+          Offrez-vous <span>une parenthèse de bien-être</span>
         </h1>
         <p className="tfy-hero-subtitle">
-          Un espace doux et chaleureux pour vous détendre, relâcher les
-          tensions et retrouver votre énergie.
+          Accordez-vous un moment rien qu&apos;à vous pour soulager les
+          tensions, relancer l&apos;énergie et simplement lâcher prise.
         </p>
         <div className="tfy-hero-actions">
           <a href="#reservation" className="tfy-btn tfy-btn-primary">
-            Réserver un massage
+            Prendre rendez-vous
           </a>
           <a href="#massages" className="tfy-btn tfy-btn-secondary">
-            Découvrir les massages
+            Découvrir les soins
           </a>
         </div>
       </div>

@@ -26,8 +26,97 @@ export const Footer: React.FC = () => {
           </div>
           <div>
             <h4>Réseaux sociaux</h4>
-            <p>Instagram : @timeforyou</p>
-            <p>Facebook : Time for You</p>
+            <div className="tfy-footer-socials">
+              <a
+                href="https://www.instagram.com/timeforyou.tfu"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram Time for You"
+              >
+                <span className="tfy-footer-social-icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="4"
+                      y="4"
+                      width="16"
+                      height="16"
+                      rx="5"
+                      ry="5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="3.4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    />
+                    <circle cx="17" cy="7" r="0.9" fill="currentColor" />
+                  </svg>
+                </span>
+                <span>@timeforyou.tfu</span>
+              </a>
+              <a
+                href="https://www.instagram.com/madame.massage"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram madame.massage"
+              >
+                <span className="tfy-footer-social-icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="4"
+                      y="4"
+                      width="16"
+                      height="16"
+                      rx="5"
+                      ry="5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="3.4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                    />
+                    <circle cx="17" cy="7" r="0.9" fill="currentColor" />
+                  </svg>
+                </span>
+                <span>@madame.massage</span>
+              </a>
+              <a
+                href="https://www.facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Page Facebook Time for You"
+              >
+                <span className="tfy-footer-social-icon" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14 8h2V5.5A20 20 0 0 0 13.6 5C11.5 5 10 6.3 10 8.8V11H8v3h2v5h3v-5h2.3L16 11h-3v-2.1C13 8.3 13.4 8 14 8Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </span>
+                <span>Time for You</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>

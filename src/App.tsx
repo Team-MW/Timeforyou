@@ -49,13 +49,34 @@ export const App: React.FC = () => {
           className="tfy-section tfy-section--first"
           data-reveal
         >
-          <div className="tfy-section-inner">
-            <h2>Bienvenue chez Time for You</h2>
-            <p>
-              Massages bien-être à taille humaine, pensés pour les seniors, les
-              étudiants, les futures mamans et toute personne qui a besoin
-              d&apos;un moment pour elle.
-            </p>
+          <div className="tfy-section-inner tfy-section-split">
+            <div>
+              <h2>Bienvenue chez Time for You</h2>
+              <p>
+                Un cocon de douceur où chaque soin est pensé pour vous
+                reconnecter à votre corps, apaiser le mental et retrouver
+                l&apos;équilibre.
+              </p>
+              <p>
+                Seniors, étudiants, futures mamans ou tout simplement fatigué·e
+                du quotidien : nous adaptons chaque massage à votre histoire et
+                à vos besoins.
+              </p>
+            </div>
+            <div className="tfy-home-highlights">
+              <div>
+                <h3>Une écoute attentive</h3>
+                <p>Un temps d&apos;échange avant chaque séance pour vous.</p>
+              </div>
+              <div>
+                <h3>Soins personnalisés</h3>
+                <p>Techniques adaptées à votre âge, votre énergie, vos envies.</p>
+              </div>
+              <div>
+                <h3>Cadre chaleureux</h3>
+                <p>Un lieu doux, intimiste et rassurant pour lâcher prise.</p>
+              </div>
+            </div>
           </div>
         </section>
         <About />

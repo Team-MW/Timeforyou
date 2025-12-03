@@ -1,12 +1,12 @@
 :root {
-  --bg: #050608;
-  --bg-alt: #0b0d11;
-  --card: #10131a;
-  --accent: #c79c5a;
-  --accent-soft: rgba(199, 156, 90, 0.16);
-  --text: #f6f6f7;
-  --muted: #a1a5b2;
-  --border: #1b1f29;
+  --bg: #ffffff;
+  --bg-alt: #fff7fb;
+  --card: #ffffff;
+  --accent: #d59aac;
+  --accent-soft: rgba(213, 154, 172, 0.16);
+  --text: #4b2a35;
+  --muted: #b78797;
+  --border: #f3dde5;
   --danger: #f87272;
   --radius-xl: 28px;
   --radius-lg: 20px;
@@ -24,7 +24,7 @@ body {
   margin: 0;
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "SF Pro Text", "Segoe UI", sans-serif;
-  background: radial-gradient(circle at top, #151927 0, #050608 55%, #020308 100%);
+  background: #ffffff;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
@@ -66,18 +66,14 @@ main {
   right: 0;
   z-index: 20;
   backdrop-filter: blur(18px);
-  background: linear-gradient(
-    to bottom,
-    rgba(3, 5, 10, 0.94),
-    rgba(3, 5, 10, 0.78),
-    transparent
-  );
+  background: #ffffff;
+  border-bottom: 1px solid rgba(243, 221, 229, 0.8);
 }
 
 .tfy-nav {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 18px 20px;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,7 +88,7 @@ main {
 }
 
 .tfy-logo-img {
-  height: 32px;
+  height: 80px;
   width: auto;
   display: block;
 }
@@ -161,7 +157,7 @@ main {
 }
 
 .tfy-nav-links li:hover {
-  color: #f0f0f5;
+  color: var(--accent);
 }
 
 .tfy-nav-links li:hover::after {
@@ -170,7 +166,7 @@ main {
 }
 
 .tfy-nav-links li.tfy-nav-link--active {
-  color: #f7e6c5;
+  color: var(--accent);
 }
 
 .tfy-nav-links li.tfy-nav-link--active::after {
@@ -210,12 +206,11 @@ main {
   inset: 0;
   background: radial-gradient(
       circle at top left,
-      rgba(0, 0, 0, 0.85) 0,
-      rgba(0, 0, 0, 0.92) 40%,
-      rgba(0, 0, 0, 0.96) 70%
+      rgba(255, 247, 245, 0.96) 0,
+      rgba(255, 247, 245, 0.96) 40%,
+      rgba(252, 230, 237, 0.9) 70%
     ),
-    linear-gradient(to top, #050608 0, transparent 40%);
-  mix-blend-mode: multiply;
+    linear-gradient(to top, rgba(255, 247, 245, 0.9) 0, transparent 45%);
 }
 
 .tfy-hero-content {
@@ -235,14 +230,14 @@ main {
   gap: 8px;
   padding: 6px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(199, 156, 90, 0.3);
+  border: 1px solid rgba(200, 139, 155, 0.4);
   background: radial-gradient(
       circle at top left,
-      rgba(199, 156, 90, 0.16),
+      rgba(200, 139, 155, 0.2),
       transparent 55%
     ),
-    rgba(7, 9, 13, 0.86);
-  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.7);
+    rgba(255, 247, 245, 0.9);
+  box-shadow: 0 18px 45px rgba(200, 139, 155, 0.25);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -259,7 +254,7 @@ main {
 }
 
 .tfy-hero h1 span {
-  background: linear-gradient(120deg, #f7e6c5, #d0a768, #f7e6c5);
+  background: linear-gradient(120deg, #c88b9b, #e6a9bc, #c88b9b);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -302,6 +297,29 @@ main {
   box-shadow: 0 22px 55px rgba(0, 0, 0, 0.8);
 }
 
+.tfy-btn-planity {
+  gap: 10px;
+  padding-inline: 18px 22px;
+}
+
+.tfy-planity-logo {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tfy-planity-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .tfy-btn-secondary {
   background: rgba(7, 9, 14, 0.9);
   border-color: rgba(199, 156, 90, 0.35);
@@ -320,11 +338,42 @@ main {
 }
 
 .tfy-section--first {
+  position: relative;
   padding-top: 40px;
+  overflow: hidden;
+}
+
+.tfy-section--first::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/logo petit noir@4x.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 260px auto;
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+#reservation {
+  position: relative;
+  overflow: hidden;
+}
+
+#reservation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/logo petit noir@4x.png");
+  background-repeat: repeat;
+  background-position: center;
+  background-size: 260px auto;
+  opacity: 0.03;
+  pointer-events: none;
 }
 
 .tfy-section-alt {
-  background: radial-gradient(circle at top, #10131b 0, #050609 55%);
+  background: #fff7fb;
 }
 
 .tfy-section-inner {
@@ -334,13 +383,32 @@ main {
 
 .tfy-section h2 {
   font-size: 28px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+  letter-spacing: 0.03em;
 }
 
 .tfy-section-intro {
   color: var(--muted);
   max-width: 520px;
   font-size: 14px;
+}
+
+.tfy-home-highlights {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 14px;
+  font-size: 13px;
+}
+
+.tfy-home-highlights h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  color: var(--accent);
+}
+
+.tfy-home-highlights p {
+  margin: 0;
+  color: var(--muted);
 }
 
 .tfy-section-split {
@@ -362,8 +430,8 @@ main {
 .tfy-about-card {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  background: radial-gradient(circle at top left, #131726, #050608 70%);
-  box-shadow: var(--shadow-soft);
+  background: radial-gradient(circle at top left, #ffffff, #ffeef4 70%);
+  box-shadow: 0 18px 45px rgba(200, 139, 155, 0.18);
   padding: 22px 24px;
   font-size: 14px;
 }
@@ -376,9 +444,9 @@ main {
 .tfy-about-highlight {
   margin-top: 14px;
   padding-top: 10px;
-  border-top: 1px dashed rgba(199, 156, 90, 0.4);
+  border-top: 1px dashed rgba(200, 139, 155, 0.4);
   font-style: italic;
-  color: #f0e5d2;
+  color: #b26f84;
 }
 
 /* Massages */
@@ -394,13 +462,13 @@ main {
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
   background: linear-gradient(
-    140deg,
-    rgba(10, 13, 21, 0.98),
-    rgba(5, 7, 12, 0.98)
+    145deg,
+    #ffffff,
+    #ffeef4
   );
   padding: 18px 18px 16px;
   font-size: 13px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 14px 40px rgba(200, 139, 155, 0.25);
   transition:
     transform 0.2s ease-out,
     box-shadow 0.2s ease-out,
@@ -410,7 +478,7 @@ main {
 .tfy-massage-card h3 {
   font-size: 15px;
   margin: 0 0 8px;
-  color: #f4e7d4;
+  color: #b26f84;
 }
 
 .tfy-massage-card p {
@@ -433,10 +501,10 @@ main {
 .tfy-reservation-card {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
-  background: radial-gradient(circle at top, #181c2b, #050609 65%);
+  background: radial-gradient(circle at top, #ffffff, #ffeef4 70%);
   padding: 22px 24px;
   font-size: 13px;
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 18px 45px rgba(200, 139, 155, 0.18);
 }
 
 .tfy-reservation-note {
@@ -465,8 +533,8 @@ main {
   margin: 0;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(240, 215, 222, 0.9);
+  box-shadow: 0 18px 45px rgba(200, 139, 155, 0.25);
 }
 
 .tfy-gallery-item img {
@@ -489,8 +557,8 @@ main {
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
-  background: #050609;
+  box-shadow: 0 18px 45px rgba(200, 139, 155, 0.18);
+  background: #ffffff;
 }
 
 .tfy-map-wrapper iframe {
@@ -506,15 +574,15 @@ main {
   margin-top: 24px;
   margin-bottom: 22px;
   border-radius: 18px;
-  border: 1px solid rgba(199, 156, 90, 0.4);
-  background: radial-gradient(circle at top left, #181b28, #070912 70%);
+  border: 1px solid rgba(200, 139, 155, 0.45);
+  background: radial-gradient(circle at top left, #ffffff, #ffeef4 70%);
   padding: 18px 20px 16px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 18px 45px rgba(200, 139, 155, 0.25);
 }
 
 .tfy-review-highlight-text {
   margin: 0 0 8px;
-  color: #f5ecdd;
+  color: #3e2430;
   font-size: 14px;
 }
 
@@ -555,10 +623,10 @@ main {
 .tfy-review-card {
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  background: linear-gradient(145deg, #0e111a, #070912);
+  background: linear-gradient(145deg, #ffffff, #ffeef4);
   padding: 16px 18px;
   font-size: 13px;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 14px 36px rgba(200, 139, 155, 0.22);
   transition:
     transform 0.2s ease-out,
     box-shadow 0.2s ease-out,
@@ -567,7 +635,7 @@ main {
 
 .tfy-review-text {
   margin: 0 0 10px;
-  color: #f0e7d9;
+  color: #3e2430;
 }
 
 .tfy-review-name {
@@ -621,8 +689,8 @@ main {
 /* Footer */
 
 .tfy-footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  background: radial-gradient(circle at top, #151827, #050609 65%);
+  border-top: 1px solid rgba(240, 215, 222, 0.9);
+  background: radial-gradient(circle at top, #ffeef4, #ffe1ec 65%);
   margin-top: 40px;
 }
 
@@ -644,7 +712,7 @@ main {
 }
 
 .tfy-footer-logo {
-  height: 32px;
+  height: 40px;
   width: auto;
   display: block;
 }
@@ -652,6 +720,42 @@ main {
 .tfy-footer-cols {
   display: flex;
   gap: 40px;
+}
+
+.tfy-footer-socials {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tfy-footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.tfy-footer-socials a:hover {
+  color: var(--accent);
+}
+
+.tfy-footer-social-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(213, 154, 172, 0.7);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: #ffffff;
+}
+
+.tfy-footer-social-icon svg {
+  width: 16px;
+  height: 16px;
 }
 
 .tfy-footer h3 {
@@ -669,7 +773,7 @@ main {
 }
 
 .tfy-footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-top: 1px solid rgba(240, 215, 222, 0.9);
   max-width: 1120px;
   margin: 0 auto;
   padding: 10px 20px 18px;
@@ -687,12 +791,12 @@ main {
   z-index: 30;
   padding: 10px 20px;
   border-radius: 999px;
-  background: radial-gradient(circle at 0 0, #f8e4c4, #c79c5a 45%, #6b4a1c);
-  color: #120c05;
+  background: radial-gradient(circle at 0 0, #fbe0ea, #c88b9b 55%, #b66980);
+  color: #3e2430;
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 18px 40px rgba(200, 139, 155, 0.4);
   border: none;
   cursor: pointer;
   transition:
@@ -702,7 +806,7 @@ main {
 
 .tfy-floating-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 24px 60px rgba(200, 139, 155, 0.5);
 }
 
 /* Responsive */

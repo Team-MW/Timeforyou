@@ -17,7 +17,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
       <nav className="tfy-nav">
         <div className="tfy-logo" onClick={() => scrollTo("hero")}>
           <img
-            src="/logo petit blanc@4x.png"
+            src="/Logo 1@4x.png"
             alt="Time for You"
             className="tfy-logo-img"
           />

@@ -20,12 +20,15 @@ export const Reservation: React.FC = () => {
             <li>Rappel automatique de votre rendez-vous</li>
           </ul>
           <a
-            className="tfy-btn tfy-btn-primary"
+            className="tfy-btn tfy-btn-primary tfy-btn-planity"
             href={PLANITY_URL}
             target="_blank"
             rel="noreferrer"
           >
-            Accéder à la réservation Planity
+            <span className="tfy-planity-logo">
+              <img src="/platiny-logo.png" alt="Planity" />
+            </span>
+            <span>Réserver via Planity</span>
           </a>
         </div>
         <div className="tfy-reservation-card">
