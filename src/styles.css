@@ -1,3 +1,52 @@
+.tfy-subhero {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 110px 20px 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.4fr);
+  gap: 32px;
+  align-items: center;
+}
+
+.tfy-subhero-media {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  background: #ffffff;
+}
+
+.tfy-subhero-media img {
+  width: 100%;
+  height: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  display: block;
+}
+
+.tfy-subhero-content h1 {
+  font-size: 32px;
+  margin: 12px 0 12px;
+}
+
+.tfy-subhero-intro {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 960px) {
+  .tfy-subhero {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 90px 18px 30px;
+  }
+
+  .tfy-subhero-media img {
+    max-height: 260px;
+  }
+}
+
 :root {
   --bg: #ffffff;
   --bg-alt: #fff7fb;
@@ -20,6 +69,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
 body {
   margin: 0;
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
@@ -27,6 +80,7 @@ body {
   background: #ffffff;
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  overflow-y: scroll; /* évite que la page se recentre quand la hauteur change (ex: page massages) */
 }
 
 .tfy-root {
@@ -140,7 +194,7 @@ main {
 .tfy-nav-links li {
   cursor: pointer;
   position: relative;
-  padding: 4px 0;
+  padding: 2px 0;
 }
 
 .tfy-nav-links li::after {
@@ -222,12 +276,27 @@ main {
 .tfy-hero-content {
   position: relative;
   z-index: 1;
-  max-width: 1120px;
+  max-width: 720px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 26px;
   animation: tfy-hero-in 0.8s ease-out both;
+}
+
+@media (min-width: 1024px) {
+  .tfy-hero-content {
+    align-items: flex-start;
+    padding-left: 120px;
+  }
+
+  .tfy-hero-actions {
+    gap: 18px;
+  }
+
+  .tfy-hero h1 span {
+    white-space: nowrap;
+  }
 }
 
 .tfy-hero-eyebrow {
@@ -266,9 +335,15 @@ main {
 }
 
 .tfy-hero-subtitle {
-  max-width: 480px;
+  max-width: 620px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 17px;
+}
+
+@media (min-width: 1024px) {
+  .tfy-hero-subtitle {
+    font-size: 20px;
+  }
 }
 
 .tfy-hero-actions {
@@ -532,6 +607,101 @@ main {
   box-shadow: 0 18px 45px rgba(200, 139, 155, 0.18);
   padding: 22px 24px;
   font-size: 14px;
+}
+
+/* Services */
+
+.tfy-services {
+  align-items: center;
+}
+
+.tfy-services-hero {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+  background: #ffffff;
+  position: relative;
+}
+
+.tfy-services-hero img {
+  width: 100%;
+  height: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 0.4s ease-out;
+}
+
+.tfy-services-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 247, 245, 0.9),
+      transparent 55%
+    ),
+    linear-gradient(to top right, rgba(200, 139, 155, 0.28), transparent 50%);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+}
+
+.tfy-services-hero:hover img {
+  transform: scale(1.06);
+}
+
+.tfy-services-list {
+  margin-top: 16px;
+}
+
+.tfy-services-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.tfy-service-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  box-shadow: 0 14px 40px rgba(200, 139, 155, 0.18);
+  transition:
+    transform 0.22s ease-out,
+    box-shadow 0.22s ease-out,
+    border-color 0.22s ease-out;
+}
+
+.tfy-service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.tfy-service-card-body {
+  padding: 16px 18px 18px;
+  font-size: 13px;
+}
+
+.tfy-service-card-body h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: #4b2a35;
+}
+
+.tfy-service-card-body p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.tfy-service-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(213, 154, 172, 0.8);
+  box-shadow: 0 18px 55px rgba(200, 139, 155, 0.36);
 }
 
 .tfy-about-card h3 {
@@ -913,7 +1083,7 @@ main {
 .tfy-floating-cta {
   position: fixed;
   right: 24px;
-  bottom: 24px;
+  bottom: 8px;
   z-index: 3;
   padding: 4px 6px;
   border-radius: 999px;
@@ -936,8 +1106,8 @@ main {
 }
 
 .tfy-planity-logo--floating {
-  width: 180px;
-  height: 42px;
+  width: 170px;
+  height: 40px;
 }
 
 /* Responsive */

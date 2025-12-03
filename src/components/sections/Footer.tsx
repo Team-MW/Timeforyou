@@ -17,8 +17,9 @@ export const Footer: React.FC = () => {
         <div className="tfy-footer-cols">
           <div>
             <h4>Contact</h4>
-            <p>Téléphone : 06 00 00 00 00</p>
+            <p>Téléphone : 06 66 85 68 25</p>
             <p>Email : contact@timeforyou.fr</p>
+            <p>Adresse : 1 Rue Théodore Monod, 31120 Pinsaguel</p>
           </div>
           <div>
             <h4>Infos légales</h4>

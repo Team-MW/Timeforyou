@@ -1,23 +1,15 @@
 import React from "react";
+import heroImage from "../images/bellephotocailloux.webp";
 
 export const Hero: React.FC = () => {
   return (
     <section id="hero" className="tfy-hero">
       <div className="tfy-hero-video-container">
-        <video
+        <img
+          src={heroImage}
+          alt="Massage bien-être Time for You"
           className="tfy-hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="https://images.pexels.com/photos/3738341/pexels-photo-3738341.jpeg?auto=compress&cs=tinysrgb&w=1600"
-        >
-          <source
-            src="https://videos.pexels.com/video-files/4148179/4148179-uhd_2560_1440_25fps.mp4"
-            type="video/mp4"
-          />
-          Votre navigateur ne supporte pas la vidéo.
-        </video>
+        />
         <div className="tfy-hero-overlay" />
       </div>
       <div className="tfy-hero-content">

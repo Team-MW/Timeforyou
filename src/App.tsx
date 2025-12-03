@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Hero } from "./components/Hero";
 import { Navigation } from "./components/Navigation";
 import { About } from "./components/sections/About";
+import { Services } from "./components/sections/Services";
 import { Massages } from "./components/sections/Massages";
 import { Reservation } from "./components/sections/Reservation";
 import { Gallery } from "./components/sections/Gallery";
@@ -85,6 +86,7 @@ export const App: React.FC = () => {
           </div>
         </section>
         <About />
+        <Services />
         <Massages />
         <Reservation />
         <Gallery />

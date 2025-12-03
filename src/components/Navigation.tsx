@@ -37,6 +37,12 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
             À propos
           </li>
           <li
+            className={activeSection === "services" ? "tfy-nav-link--active" : ""}
+            onClick={() => scrollTo("services")}
+          >
+            Nos services
+          </li>
+          <li
             className={activeSection === "massages" ? "tfy-nav-link--active" : ""}
             onClick={() => scrollTo("massages")}
           >
@@ -47,12 +53,6 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
             onClick={() => scrollTo("reservation")}
           >
             Réservation
-          </li>
-          <li
-            className={activeSection === "photos" ? "tfy-nav-link--active" : ""}
-            onClick={() => scrollTo("photos")}
-          >
-            Photos
           </li>
           <li
             className={
