@@ -26,7 +26,7 @@ export const Navigation: React.FC<NavigationProps> = ({ activeSection }) => {
         <ul className="tfy-nav-links">
           <li
             className={activeSection === "accueil" ? "tfy-nav-link--active" : ""}
-            onClick={() => scrollTo("accueil")}
+            onClick={() => scrollTo("hero")}
           >
             Accueil
           </li>

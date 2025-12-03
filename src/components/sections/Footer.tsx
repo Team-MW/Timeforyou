@@ -1,4 +1,5 @@
 import React from "react";
+import logoNoir from "../../images/Logo noir@4x.png";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -7,7 +8,7 @@ export const Footer: React.FC = () => {
       <div className="tfy-footer-inner">
         <div className="tfy-footer-brand">
           <img
-            src="/logo petit blanc@4x.png"
+            src={logoNoir}
             alt="Time for You"
             className="tfy-footer-logo"
           />

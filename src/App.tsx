@@ -29,7 +29,11 @@ export const App: React.FC = () => {
 
         if (visible[0]) {
           const id = visible[0].target.id;
-          setActiveSection(id);
+          if (id === "hero") {
+            setActiveSection("accueil");
+          } else {
+            setActiveSection(id);
+          }
         }
       },
       { threshold: 0.4 }
