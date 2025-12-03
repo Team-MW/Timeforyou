@@ -2,7 +2,7 @@ import React from "react";
 import hommeMassage from "../../images/hommemassage.jpg";
 import bellePhoto from "../../images/bellephotocailloux.webp";
 import rituels from "../../images/rituels.webp";
-import maderotherapie from "../../images/Maderothérapie.webp";
+import maderotherapie from "../../images/maderotherapie.webp";
 import massageHindou from "../../images/Massage hindou essentiel.jpg";
 
 export const Services: React.FC = () => {
