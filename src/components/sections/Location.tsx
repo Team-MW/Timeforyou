@@ -6,12 +6,12 @@ export const Location: React.FC = () => {
       <div className="tfy-section-inner tfy-section-split">
         <div>
           <h2>Localisation</h2>
-          <p>
+          <p className="tfy-location-intro">
             Le cabinet Time for You vous accueille à Pinsaguel, au sud de
             Toulouse, dans un environnement calme et facile d&apos;accès en
             voiture.
           </p>
-          <ul className="tfy-list">
+          <ul className="tfy-list tfy-location-list">
             <li>Adresse : 1 Rue Théodore Monod, 31120 Pinsaguel</li>
             <li>Stationnement : places disponibles à proximité</li>
             <li>Accès : à quelques minutes de Toulouse en voiture</li>

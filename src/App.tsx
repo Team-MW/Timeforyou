@@ -56,17 +56,21 @@ export const App: React.FC = () => {
           data-reveal
         >
           <div className="tfy-section-inner tfy-section-split">
-            <div>
+            <div className="tfy-home-intro">
               <h2>Bienvenue chez Time for You</h2>
-              <p>
-                Un cocon de douceur où chaque soin est pensé pour vous
-                reconnecter à votre corps, apaiser le mental et retrouver
-                l&apos;équilibre.
+              <p className="tfy-home-intro-main">
+                Un <strong>cocon de douceur</strong> où chaque soin est pensé
+                pour vous reconnecter à votre corps, apaiser le mental et
+                retrouver <strong>l&apos;équilibre</strong>.
               </p>
-              <p>
-                Seniors, étudiants, futures mamans ou tout simplement fatigué·e
-                du quotidien : nous adaptons chaque massage à votre histoire et
-                à vos besoins.
+              <p className="tfy-home-intro-sub">
+                Seniors, étudiants, futures mamans ou tout simplement
+                fatigué·e du quotidien :{" "}
+                <strong>
+                  nous adaptons chaque massage à votre histoire et à vos
+                  besoins
+                </strong>
+                .
               </p>
             </div>
             <div className="tfy-home-highlights">

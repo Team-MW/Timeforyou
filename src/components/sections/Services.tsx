@@ -13,8 +13,11 @@ export const Services: React.FC = () => {
           <h2>Nos services</h2>
           <p className="tfy-section-intro">
             Une sélection de massages et de soins bien-être pensés pour répondre
-            à différents besoins : détente profonde, récupération, légèreté,
-            accompagnement des étapes de vie.
+            à vos différents besoins :{" "}
+            <strong>détente profonde</strong>,{" "}
+            <strong>récupération</strong>,{" "}
+            <strong>légèreté</strong> et{" "}
+            <strong>accompagnement des grandes étapes de vie</strong>.
           </p>
           <ul className="tfy-list tfy-services-list">
             <li>Massages bien-être personnalisés</li>

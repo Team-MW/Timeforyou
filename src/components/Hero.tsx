@@ -17,9 +17,10 @@ export const Hero: React.FC = () => {
         <h1>
           Offrez-vous <span>une parenthèse de bien-être</span>
         </h1>
-        <p className="tfy-hero-subtitle">
-          Accordez-vous un moment rien qu&apos;à vous pour soulager les
-          tensions, relancer l&apos;énergie et simplement lâcher prise.
+        <p className="tfy-hero-subtitle tfy-hero-subtitle--framed">
+          <strong>Accordez-vous un moment rien qu&apos;à vous</strong> pour
+          soulager les tensions, relancer l&apos;énergie et simplement lâcher
+          prise.
         </p>
         <div className="tfy-hero-actions">
           <a href="#reservation" className="tfy-btn tfy-btn-primary">

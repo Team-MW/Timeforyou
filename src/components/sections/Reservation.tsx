@@ -10,12 +10,12 @@ export const Reservation: React.FC = () => {
       <div className="tfy-section-inner tfy-section-split tfy-section-reservation">
         <div>
           <h2>Réservation</h2>
-          <p>
+          <p className="tfy-reservation-intro">
             La prise de rendez-vous se fait en ligne via Planity. Choisissez le
             massage qui vous correspond, l&apos;horaire qui vous convient, et
-            recevez une confirmation immédiate.
+            recevez une <strong>confirmation immédiate</strong>.
           </p>
-          <ul className="tfy-list">
+          <ul className="tfy-list tfy-reservation-list">
             <li>Choix du massage et de la durée</li>
             <li>Calendrier en temps réel</li>
             <li>Rappel automatique de votre rendez-vous</li>
