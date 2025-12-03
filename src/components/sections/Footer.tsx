@@ -1,5 +1,5 @@
 import React from "react";
-import logoNoir from "../../images/Logo noir@4x.png";
+import footerImage from "../../images/Capture d’écran 2025-12-03 à 12.21.07.png";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -8,8 +8,8 @@ export const Footer: React.FC = () => {
       <div className="tfy-footer-inner">
         <div className="tfy-footer-brand">
           <img
-            src={logoNoir}
-            alt="Time for You"
+            src={footerImage}
+            alt="Time for You - visuel"
             className="tfy-footer-logo"
           />
           <p>Massages bien-être · Seniors · Étudiants · Femmes enceintes</p>

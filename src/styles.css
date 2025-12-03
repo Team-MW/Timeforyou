@@ -277,8 +277,8 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  padding: 10px 20px;
-  font-size: 13px;
+  padding: 11px 22px;
+  font-size: 14px;
   font-weight: 500;
   text-decoration: none;
   cursor: pointer;
@@ -287,14 +287,14 @@ main {
 }
 
 .tfy-btn-primary {
-  background: radial-gradient(circle at 0 0, #f8e4c4, #c79c5a 45%, #6b4a1c);
-  color: #120c05;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  background: radial-gradient(circle at 0 0, #fbe0ea, #c88b9b 55%, #b66980);
+  color: #4b2a35;
+  box-shadow: 0 14px 34px rgba(200, 139, 155, 0.55);
 }
 
 .tfy-btn-primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 18px 46px rgba(200, 139, 155, 0.75);
 }
 
 .tfy-btn-planity {
@@ -342,14 +342,14 @@ main {
 }
 
 .tfy-btn-secondary {
-  background: rgba(7, 9, 14, 0.9);
-  border-color: rgba(199, 156, 90, 0.35);
-  color: #f3eee5;
+  background: #ffffff;
+  border-color: rgba(213, 154, 172, 0.5);
+  color: #4b2a35;
 }
 
 .tfy-btn-secondary:hover {
-  background: rgba(12, 16, 23, 0.95);
-  border-color: rgba(199, 156, 90, 0.6);
+  background: #fff7fb;
+  border-color: rgba(213, 154, 172, 0.8);
 }
 
 /* Sections génériques */
@@ -452,9 +452,12 @@ main {
 #massages::before {
   content: "";
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  top: 30%;
+  bottom: 30%;
   background-image: url("./images/logo petit noir@4x.png");
-  background-repeat: repeat;
+  background-repeat: repeat-x;
   background-position: center;
   background-size: 260px auto;
   opacity: 0.03;
@@ -788,7 +791,7 @@ main {
   margin: 0 auto;
   padding: 30px 20px 22px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 40px;
   font-size: 13px;
@@ -798,14 +801,17 @@ main {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  max-width: 520px;
 }
 
 .tfy-footer-logo {
-  height: 60px;
-  width: auto;
-  max-width: 100%;
+  width: 100%;
+  height: auto;
   display: block;
   margin-bottom: 8px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(200, 139, 155, 0.3);
 }
 
 .tfy-footer-cols {
