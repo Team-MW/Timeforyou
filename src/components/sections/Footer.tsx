@@ -1,5 +1,5 @@
 import React from "react";
-import footerImage from "../../images/Capture d’écran 2025-12-03 à 12.21.07.png";
+import footerImage from "../../images/Capture.png";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
