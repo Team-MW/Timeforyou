@@ -24,11 +24,11 @@ export const Reservation: React.FC = () => {
             href={PLANITY_URL}
             target="_blank"
             rel="noreferrer"
+            aria-label="Réserver via Planity"
           >
             <span className="tfy-planity-logo">
-              <img src="/platiny-logo.png" alt="Planity" />
+              <img src="/planity-logo.png" alt="Planity" />
             </span>
-            <span>Réserver via Planity</span>
           </a>
         </div>
         <div className="tfy-reservation-card">

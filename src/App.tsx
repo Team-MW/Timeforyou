@@ -86,8 +86,10 @@ export const App: React.FC = () => {
         <Location />
         <Reviews />
       </main>
-      <a href="#reservation" className="tfy-floating-cta">
-        Réserver
+      <a href="#reservation" className="tfy-floating-cta" aria-label="Réserver via Planity">
+        <span className="tfy-planity-logo tfy-planity-logo--floating">
+          <img src="/planity-logo.png" alt="Planity" />
+        </span>
       </a>
       <Footer />
     </div>
