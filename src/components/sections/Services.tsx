@@ -1,9 +1,9 @@
 import React from "react";
 import hommeMassage from "../../images/hommemassage.jpg";
 import bellePhoto from "../../images/bellephotocailloux.webp";
-import ambiance from "../../images/ku4gjvncqli6iqohmxe2.webp";
 import rituels from "../../images/rituels.webp";
-import visitWellness from "../../images/visit-doctor-wellness-cupping-massage-therapy-reha-1500.jpg";
+import maderotherapie from "../../images/Maderothérapie.webp";
+import massageHindou from "../../images/Massage hindou essentiel.jpg";
 
 export const Services: React.FC = () => {
   return (
@@ -39,12 +39,13 @@ export const Services: React.FC = () => {
           </div>
         </article>
         <article className="tfy-service-card">
-          <img src={ambiance} alt="Ambiance du cabinet" />
+          <img src={massageHindou} alt="Massage hindou essentiel" />
           <div className="tfy-service-card-body">
-            <h3>Accompagnement sur-mesure</h3>
+            <h3>Massage hindou essentiel</h3>
             <p>
-              Une écoute attentive pour adapter chaque séance à votre énergie et
-              à votre histoire.
+              Un rituel inspiré des traditions hindoues, qui combine pressions
+              douces et mouvements enveloppants pour apaiser le mental et
+              harmoniser l&apos;énergie.
             </p>
           </div>
         </article>
@@ -60,14 +61,15 @@ export const Services: React.FC = () => {
         </article>
         <article className="tfy-service-card">
           <img
-            src={visitWellness}
-            alt="Cupping et techniques spécifiques de récupération"
+            src={maderotherapie}
+            alt="Maderothérapie, massage avec outils en bois"
           />
           <div className="tfy-service-card-body">
-            <h3>Techniques ciblées &amp; récupération</h3>
+            <h3>Maderothérapie &amp; remodelage</h3>
             <p>
-              Des approches spécifiques (ventouses, travail sur certaines
-              zones...) pour soutenir le corps dans sa récupération.
+              Une technique de massage utilisant des outils en bois pour
+              stimuler la circulation, lisser les tissus et favoriser une
+              sensation de légèreté dans le corps.
             </p>
           </div>
         </article>
