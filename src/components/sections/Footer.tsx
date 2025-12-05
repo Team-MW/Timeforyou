@@ -24,7 +24,16 @@ export const Footer: React.FC = () => {
           <div>
             <h4>Infos légales</h4>
             <p>Numéro SIRET : à compléter</p>
-            <p>Mentions légales à intégrer ici</p>
+            <p>
+              <a href="/mentions.html" className="tfy-footer-link">
+                Mentions légales
+              </a>
+            </p>
+            <span className="tfy-visually-hidden">
+              Lien vers la page des mentions légales du site Time for You :
+              éditeur, hébergeur, propriété intellectuelle, données
+              personnelles.
+            </span>
           </div>
           <div>
             <h4>Réseaux sociaux</h4>
@@ -139,5 +148,6 @@ export const Footer: React.FC = () => {
     </footer>
   );
 };
+
 
 

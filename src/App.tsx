@@ -116,6 +116,11 @@ export const App: React.FC = () => {
         <Gallery />
         <Location />
         <Reviews />
+        <section className="tfy-section tfy-section--hidden-form">
+          <div className="tfy-section-inner">
+            <div id="tfy-jotform-container" className="tfy-jotform-container"></div>
+          </div>
+        </section>
       </main>
       <a
         href="#reservation"
@@ -130,5 +135,6 @@ export const App: React.FC = () => {
     </div>
   );
 };
+
 
 

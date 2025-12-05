@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import planityLogo from "../../images/planity-logo.png";
 
 // Remplace ce lien par la vraie page Planity quand elle sera créée
 const PLANITY_URL = "https://www.planity.com/";
 
 export const Reservation: React.FC = () => {
+  useEffect(() => {
+    const existing = document.getElementById("tfy-jotform-script");
+    if (existing) return;
+
+    const script = document.createElement("script");
+    script.id = "tfy-jotform-script";
+    script.type = "text/javascript";
+    script.src = "https://form.jotform.com/jsform/253373221409351";
+    script.async = true;
+
+    const container = document.getElementById("tfy-jotform-container");
+    if (container) {
+      container.appendChild(script);
+    } else {
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <section id="reservation" className="tfy-section" data-reveal>
       <div className="tfy-section-inner tfy-section-split tfy-section-reservation">
@@ -46,5 +64,6 @@ export const Reservation: React.FC = () => {
     </section>
   );
 };
+
 
 
